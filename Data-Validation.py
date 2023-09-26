@@ -89,15 +89,15 @@ Variance = MMS_VS_DWH[(MMS_VS_DWH['MMS-AGG'] != 0) | (MMS_VS_DWH['MMS-HEADER'] !
 print('\n\n*** PREVIEW OF VARIANCE ***\n')
 print(Variance)
 
-# Crafting the name of output file
+# Crafting the name of output file, Double Qoutes needed and name of file at end
 output_file = os.path.basename(unvalidated_files[0][:-8])
 output_file = output_file + "MMSvsDWH.xlsx"
 output_file = "C:\\Validation\\Validated\\" + output_file
 
-# Double Qoutes needed and name of file at end
+# Creating an Excel file to write the results to
 writer = pd.ExcelWriter(output_file)
 
-# Writing the sheets for merged MMS and DWH and Variance
+# Populating the sheets with merged MMS and DWH and Variance
 MMS_VS_DWH.to_excel(writer,sheet_name='Merged MMS and DWH')
 Variance.to_excel(writer,sheet_name='Variance')
 
