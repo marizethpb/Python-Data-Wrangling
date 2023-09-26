@@ -38,4 +38,7 @@ DWH Excel file contains (can be in separate sheets or in one merged table):
 1. The merged table of MMS and DWH data that shows variance.
 2. Filtered stores at a given date that has variance.
 
+**Usage**: Put the MMS and DWH Excel files in "Unvalidated "folder, run the script, and an Excel file of variances between MMS and DWH will be uploaded to "Validated" folder.
+
+
 
