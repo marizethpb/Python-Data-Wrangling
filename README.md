@@ -27,7 +27,7 @@ DWH Excel file contains (can be in separate sheets or in one merged table):
    - Store Code
    - Aggregate Sales
 
-**ACTION TO BE TAKEN**: 
+**ACTIONS TO BE TAKEN**: 
 1. Summarize the Sales table by date and sum of Extended Price in MMS if Extended Price is given, in order to convert it to gross sales.
 2. Standardize the format of dates for MMS and DWH if the date format is different.
 3. Left join all the tables in DWH (line sales, header sales, and aggregate sales) on MMS using the store code and date.
