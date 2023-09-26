@@ -1,6 +1,6 @@
 # Python-Data-Wrangling
 
-**Objective**: Validate sales data from Merchandise Management System (MMS) anf Data Warehouse (DWH)
+**Objective**: Validate sales data from Merchandise Management System (MMS) and Data Warehouse (DWH)
 
 Given two separate Excel files that contains data for MMS and DWH in a given time interval, determine whether there's a variance 
 between the data in data source database (MMS) and destination (DWH). The program must cater all the possible format of data.
@@ -38,7 +38,7 @@ DWH Excel file contains (can be in separate sheets or in one merged table):
 1. The merged table of MMS and DWH data that shows variance.
 2. Filtered stores at a given date that has variance.
 
-**Usage**: Put the MMS and DWH Excel files in "Unvalidated "folder, run the script, and an Excel file of variances between MMS and DWH will be uploaded to "Validated" folder.
+**Usage**: Put the MMS and DWH Excel files in "Unvalidated "folder, run the script, and an Excel file that contain variances between MMS and DWH will be uploaded to "Validated" folder.
 
 
 
