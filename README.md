@@ -2,32 +2,41 @@
 
 **Objective**: Validate sales data from Merchandise Management System (MMS) to Data Warehouse (DWH)
 
-Given two separate Excel Files that contains data for MMS and DWH, determine whether there's a variance between the
-data source database (MMS) and destination (Data Warehouse). The program must cater all the possible format of data.
+Given two separate Excel files that contains data for MMS (Merchandise Management System) and DWH (Data Warehouse) in a given time interval, 
+determine whether there's a variance between the data in data source database (MMS) and destination (DWH). The program must cater all the possible 
+format of data.
 
-DWH Excel file contains: 
+MMS Excel file contains: 
 1. Sales Sheet 
-   - Date in short date format (DD/MM/YYYY)
+   - Transaction date in form of concatenated digits (YYMMDD) or Date in short date format (DD/MM/YYYY)
    - Store Code
    - Gross Sales (no more transformation) or Extended Price (needs grouping transformation)
 
-MMS Excel file contains (can be in separate sheets or in one merged table): 
+DWH Excel file contains (can be in separate sheets or in one merged table): 
 1. Line Sales Sheet 
-   - Transaction date in format of concatenated digits (YYMMDD) or Date in short date format (DD/MM/YYYY)
+   - Date in short date format (DD/MM/YYYY)
    - Store Code
    - Line Sales
      
 2. Header Sales Sheet 
-   - Transaction date in format of concatenated digits (YYMMDD) or Date in short date format (DD/MM/YYYY)
+   - Date in short date format (DD/MM/YYYY)
    - Store Code
    - Header Sales 
 
-3. Line Sales Sheet 
-   - Transaction date in format of concatenated digits (YYMMDD) or Date in short date format (DD/MM/YYYY)
+3. Aggregate Sales Sheet 
+   - Date in short date format (DD/MM/YYYY)
    - Store Code
-   - Line Sales
+   - Aggregate Sales
 
-ACTION TO BE TAKEN: 
-
+**ACTION TO BE TAKEN**: 
+1. Summarize the Sales table by date and sum of Extended Price in MMS if Extended Price is given, in order to convert it to gross sales.
+2. Standardize the format of dates for MMS and DWH if the date format is different.
+3. Left join all the tables in DWH (line sales, header sales, and aggregate sales) on MMS using the store code and date.
+4. Calculate the variance between gross sales and all the tables in DWH 
+5. Export the resulting table and filtered table of variances in an Excel file.
+   
+**PROGRAM OUTPUT**: An Excel file that contains 2 sheets: 
+1. The merged table of MMS and DWH data that shows variance.
+2. Filtered stores at a given date that has variance.
 
 
